@@ -1,0 +1,46 @@
+# 🚨 Don't change the code below 👇
+print("Welcome to the Love Calculator!")
+name1 = input("What is your name?\n")
+name2 = input("What is their name?\n")
+# 🚨 Don't change the code above 👆
+
+
+
+def smaller(name1,name2):
+   
+   name1=name1.lower()
+   name2=name2.lower()
+   return name1,name2
+def countvalues_1(name1,name2):
+    count_n=0
+    count_l=0
+    name=[]
+    name.append(name1)
+    name.append(name2)
+    for i in name:
+        t=i.count('t')
+        r=i.count('r')
+        u=i.count('u')
+        e=i.count('e')
+        count_n=count_n+t+r+u+e
+    for i in name:
+        l=i.count('l')
+        o=i.count('o')
+        v=i.count('v')
+        e=i.count('e')
+        count_l=count_l+l+o+v+e
+    return count_n,count_l
+
+#name1,name2=smaller(name1,name2)
+#name1_count=countvalues(name1)
+name1_count,name2_count=countvalues_1(name1,name2)
+#print(name1_count)
+#print(name2_count)
+lovescore=str(name1_count)+str(name2_count)
+lovescore=int(lovescore)
+if lovescore <10 and lovescore >90:
+  print(f"Your score is {lovescore}, you go together like coke and mentos.")
+elif lovescore in range(40,50):
+  print(f"Your score is {lovescore}, you are alright together.")
+else:
+  print(f"Your score is {lovescore}.")
