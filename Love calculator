@@ -38,7 +38,7 @@ name1_count,name2_count=countvalues_1(name1,name2)
 #print(name2_count)
 lovescore=str(name1_count)+str(name2_count)
 lovescore=int(lovescore)
-if lovescore <10 and lovescore >90:
+if lovescore <10 or lovescore >90:
   print(f"Your score is {lovescore}, you go together like coke and mentos.")
 elif lovescore in range(40,50):
   print(f"Your score is {lovescore}, you are alright together.")
