@@ -1,0 +1,36 @@
+def is_leap(year):
+  if year % 4 == 0:
+    if year % 100 == 0:
+      if year % 400 == 0:
+       category= True
+      else:
+        category=False
+    else:
+      category=True
+  else:
+    category=False
+  return category
+
+def days_in_month(year,month):
+  month_days = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]  
+  check_leap=is_leap(year)
+  #print(check_leap)
+  if check_leap==True:
+     if month== 2:
+        monthindex=int(month)-1
+        days=month_days[monthindex]+1
+        #print(days)
+     elif  month!= 2:
+        monthindex=int(month)-1
+        days=month_days[monthindex]
+  else:
+     monthindex=int(month)-1
+     days=month_days[monthindex]
+  return days
+
+  
+#🚨 Do NOT change any of the code below 
+year = int(input("Enter a year: "))
+month = int(input("Enter a month: "))
+days = days_in_month(year, month)
+print(days)
