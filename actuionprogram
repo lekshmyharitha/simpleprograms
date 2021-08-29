@@ -1,0 +1,28 @@
+from replit import clear
+#HINT: You can call clear() to clear the output in the console.
+import art
+from art import logo
+action={}
+def getnew():
+    name=input('Enter your name')
+    price=input('Enter your bid price')
+    action={'name':name,'bid':price}
+    status=input('Is there any one for bind')
+    status=status.lower()
+    return action,status
+    
+action,status=getnew()
+print(action)
+print(status)
+
+if status =="yes":
+  clear()
+  getnew()
+elif status =="no":
+  for keys,values in enumerate (action):
+       value=[]
+       value=value.append(values)
+  winnerbid=max(value)
+  for keys in action:
+    if action[keys]==winnerbid:
+       print('Winner is',keys)
